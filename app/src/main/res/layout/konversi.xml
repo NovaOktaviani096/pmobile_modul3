@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/icon_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/pilih_matauang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pilih_matauang"
+            app:srcCompat="@drawable/ic_money" />
+
+        <TextView
+            android:id="@+id/pilih_matauang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/pilih_mata_uang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/dollar"
+            android:orientation="vertical"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pilih_matauang">
+
+            <RadioButton
+                android:id="@+id/euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro" />
+
+            <RadioButton
+                android:id="@+id/dollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dollar" />
+
+            <RadioButton
+                android:id="@+id/yen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yen" />
+
+            <RadioButton
+                android:id="@+id/riyal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/riyal" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/icon_cashhere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/nilai_matauang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nilai_matauang"
+            app:srcCompat="@drawable/ic_cashhere" />
+
+        <EditText
+            android:id="@+id/nilai_matauang"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/nilai_mata_uang"
+            android:inputType="numberDecimal"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/options" />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:backgroundTint="@color/hijau1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/nilai_matauang"
+            app:layout_constraintTop_toBottomOf="@id/nilai_matauang" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cashAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            tools:text="Nilai Rupiah: Rp 10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
